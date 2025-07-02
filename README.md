@@ -1,41 +1,68 @@
-Google Trend Treemap
-Generate a Treemap chart of Google trending searches with one click. This project runs as a web API that fetches real-time data and visualizes it dynamically.
+📈 Google Trends Taiwan Treemap
+Generate a real-time Treemap chart of Google trending searches in Taiwan with just one click.
+This project launches a browser in the background to fetch the latest data and displays a dynamic chart directly.
 
 🔍 Features
-Automatically scrapes Google Trends (Traditional Chinese interface)
+Auto-scrapes Google Trends (Traditional Chinese) using Playwright
 
-Treemap visualization showing search volume
+Filters to show only active trending topics
 
-Deployable as a public web API for real-time usage
+Sorts by search volume, displays top 50
+
+Real-time Treemap visualization using Plotly
+
+Deployable as a public interactive web interface
 
 🧰 Tech Stack
-Python + Flask
+Python + Playwright (headless browser scraping)
 
-Playwright (for browser automation)
+Pandas (data processing)
 
-Pandas + Plotly (data processing & visualization)
+Plotly (Treemap visualization)
 
-🚀 Quick Deployment (Fly.io)
-Fork this repository
+📸 Demo
 
-Install Fly CLI
+↑ Generated Treemap chart
 
-Log in via CLI: fly auth login
+💡 How It Works
+Launches a headless Chromium browser
 
-Launch app: fly launch (follow prompts)
+Forces Traditional Chinese UI on Google Trends
 
-Edit fly.toml to adjust region and port (usually 8080)
+Enables "Only show active trends"
 
-Deploy: fly deploy
+Sorts by search volume, 50 results per page
 
-Visit your Fly.io app URL to view the live Treemap
+Clicks Export → Download CSV
 
-📂 Project Structure
-graphql
+Parses and cleans the data
+
+Visualizes using Plotly Treemap
+
+🚀 Quick Run (for local test)
+bash
 复制
 编辑
-├── api.py             # Flask API entry point  
-├── analysis_tool.py   # Data processing & plotting module  
-├── requirements.txt   # Python dependencies  
-├── fly.toml           # Fly.io deployment configuration  
-└── README.md          # Project description  
+pip install -r requirements.txt
+python main.py
+The chart will auto-display after scraping completes (~10s).
+
+📂 Project Structure
+bash
+复制
+编辑
+.
+├── analysis_tool.py     # Web scraper + cleaner + visualizer
+├── main.py              # Entry point: one-click run
+├── requirements.txt     # Python dependencies
+├── 作图.jpg               # Sample output
+├── 过程.jpg               # Screenshot of scraping flow
+└── README.md
+✅ Use Case
+This project is designed to be shared as a live demo or interview portfolio to showcase:
+
+Python automation
+
+Real-time data processing
+
+Clean and interactive visualization
