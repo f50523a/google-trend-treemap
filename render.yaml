@@ -3,6 +3,6 @@ services:
     name: google-trend-treemap
     env: python
     plan: free
-    buildCommand: ""
-    startCommand: playwright install && python api.py
     region: singapore
+    buildCommand: pip install playwright && playwright install chromium
+    startCommand: python api.py
