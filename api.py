@@ -17,16 +17,20 @@ def index():
 
     html = f"""
     <html>
-    <head><title>Google 熱門趨勢</title></head>
-    <body>
-        <h1>即時關鍵字 Treemap</h1>
+    <head>
+        <title>Google 熱門趨勢</title>
+    </head>
+    <body style="text-align:center; font-family:sans-serif; background-color:#f9f9f9; padding:40px">
+        <h1 style="color:#333">即時關鍵字 Treemap</h1>
         <form method="get">
-            <button type="submit">立即更新</button>
+            <button type="submit" style="padding:10px 20px; font-size:16px; cursor:pointer;">立即更新</button>
         </form>
-        {html_graph}
+        <div style="margin-top:40px">
+            {html_graph}
+        </div>
     </body>
     </html>
-    """
+"""
     return render_template_string(html)
 
 if __name__ == '__main__':
