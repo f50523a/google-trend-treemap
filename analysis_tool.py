@@ -75,6 +75,8 @@ def plotting_figure(df):
     return fig
 
 def download_google_trend_csv():
+    print('打开爬虫工具.....')
+
     with sync_playwright() as p:
         browser = p.chromium.launch(headless=True)
         context = browser.new_context(accept_downloads=True)
