@@ -1,0 +1,8 @@
+services:
+  - type: web
+    name: google-trend-treemap
+    env: python
+    plan: free
+    buildCommand: ""
+    startCommand: playwright install && python api.py
+    region: singapore
