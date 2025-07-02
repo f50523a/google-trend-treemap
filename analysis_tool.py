@@ -17,7 +17,7 @@ from playwright.sync_api import Playwright, sync_playwright
 
 
 
-def cleaing_searching_acount(df):
+def cleaning_searching_acount(df):
     df['搜尋量'] = df['搜尋量'].str.replace('万','0000')
     df['搜尋量'] = df['搜尋量'].str.replace(',','')
     df['搜尋量'] = df['搜尋量'].str.replace('+', '')
