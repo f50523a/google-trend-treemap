@@ -7,7 +7,7 @@ app = Flask(__name__)
 @app.route('/')
 def index():
     df = AT.download_google_trend_csv()
-    df = AT.cleaing_searching_acount(df)
+    df = AT.cleaning_searching_acount(df)
     df = AT.cleaning_datetime(df)
     df['更新时间'] = datetime.now().replace(microsecond=0)
 
